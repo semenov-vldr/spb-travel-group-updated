@@ -1,0 +1,83 @@
+mixin footer-nav__item(href, name)
+    li.footer-nav__item
+        a.footer-nav__link(href=href)=name
+
+footer.footer
+    .footer__container.container
+
+        a.footer__logo(href="/")
+            include ../../img/icons/logo-text.svg
+
+        .footer__content
+
+            nav.footer__nav.footer-nav
+                h2.footer__title Экскурсии
+                ul.footer-nav__list.footer-nav__list--excursions
+                    +footer-nav__item("##", "Индивидуальные")
+                    +footer-nav__item("##", "Авторские")
+                    +footer-nav__item("##", "Групповые")
+                    +footer-nav__item("##", "Свидание на крыше")
+                    +footer-nav__item("##", "Для школьников")
+                    +footer-nav__item("##", "Фотосессия на крыше")
+                    +footer-nav__item("##", "По дворам и парадным")
+                    +footer-nav__item("##", "Полет - свидание на самолете")
+                    +footer-nav__item("##", "Водные прогулки")
+                    +footer-nav__item("##", "Салют с крыши")
+                    +footer-nav__item("##", "Ночные и вечерние")
+                    +footer-nav__item("##", "По пригородам")
+                    +footer-nav__item("##", "Под развод мостов")
+
+
+            nav.footer__nav.footer-nav.footer-nav--tours
+                h2.footer__title Туры
+                ul.footer-nav__list
+                    +footer-nav__item("##", "Индивидуальные")
+                    +footer-nav__item("##", "Групповые")
+                    +footer-nav__item("##", "Классические")
+                    +footer-nav__item("##", "Школьные в Санкт-Петербурге")
+                    +footer-nav__item("##", "Школьные по России")
+                    +footer-nav__item("##", "Тест на тур")
+
+
+            .footer__official.footer-official
+                ul.footer-official__list
+                    li.footer-official__item
+                        a.footer-official__link(href="https://tourism.gov.ru/reestry/reestr-turoperatorov/show.php?id=114782")
+                            span Мы в реестре туроператоров
+                            include ../../img/icons/contacts/arrow-down-right.svg
+                    li.footer-official__item
+                        button.footer-official__link
+                            span Задать вопрос поддержке
+                            include ../../img/icons/contacts/ask.svg
+                    li.footer-official__item
+                        a.footer-official__link(href="##") Оплата и возрат
+                    li.footer-official__item
+                        a.footer-official__link(href="##") Расчет тура
+
+                address.footer__contacts.footer-contacts
+                    h2.footer__title Контакты
+                    ul.footer-contacts__list
+                        li.footer-contacts__item.footer-contacts__item--telegram
+                            a.footer-contacts__link(href="https://t.me/alinaspbtravelgroup")
+                                include ../../img/icons/contacts/telegram.svg
+                                span Telegram
+                        li.footer-contacts__item.footer-contacts__item--vk
+                            a.footer-contacts__link(href="https://vk.com/spbtravelgroup")
+                                include ../../img/icons/contacts/vk.svg
+                                span Вконтакте
+                        li.footer-contacts__item.footer-contacts__item--whatsapp
+                            a.footer-contacts__link(href="https://api.whatsapp.com/send?phone=79111562004")
+                                include ../../img/icons/contacts/whatsapp.svg
+                                span Whatsapp
+                        li.footer-contacts__item.footer-contacts__item--tel
+                            a.footer-contacts__link(href="tel:+79111562004")
+                                include ../../img/icons/contacts/tel.svg
+                                span +7 (911) 156-20-04
+
+                address.footer__cooperation.footer-cooperation
+                    h2.footer__title Вопросы по сотрудничеству
+                    a.footer-cooperation__email(href="mailto:admin@spbtravelgroup.ru") admin@spbtravelgroup.ru
+
+        .footer__requisites
+            a.footer__politics(href="##") Политика конфиденциальности
+            p.footer__requisites-text © 2016—2023 ООО&nbsp;«СПБ&nbsp;Тревел&nbsp;Групп». ИНН&nbsp;7751177808 ОГРН&nbsp;1207700095833 Номер в реестре Туроператоров РТО&nbsp;022600 (Приказ № 38-Пр-21). Копирование изображений и текстов возможно только с указанием активной ссылки на сайт СПБ&nbsp;Тревел&nbsp;Групп.

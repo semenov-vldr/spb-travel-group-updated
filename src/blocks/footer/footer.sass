@@ -1,0 +1,148 @@
+.footer
+  padding: 24px 0 16px
+  background-color: $dark-grey
+  color: $white
+  @media (max-width: $width-mobile)
+    padding: 16px 0 12px
+
+  &__container
+    display: flex
+    flex-direction: column
+
+    a, button
+      width: fit-content
+      transition: $transition
+      &:hover
+        color: $accent
+
+  &__logo
+    height: 50px
+    @media (max-width: $width-mobile)
+      height: 44px
+    svg
+      height: 100%
+      width: 100%
+
+  &__content
+    display: flex
+    margin-top: 40px
+    gap: 120px
+    flex-wrap: wrap
+    @include fontSize(14, 16)
+    @media (max-width: $width-tablet)
+      gap: 56px
+    @media (max-width: $width-mobile)
+      gap: 16px
+      flex-direction: column
+
+  &-nav
+    &__list
+      display: inline-grid
+      gap: 12px 48px
+      @media (max-width: $width-mobile)
+        display: none
+        padding: 16px 0
+        color: lightgrey
+    .footer__title.js-mobile-nav-open + .footer-nav__list
+      display: inline-grid
+    .footer__title.js-mobile-nav-open::after
+      transform: rotate(-180deg)
+    &__list--excursions
+      grid-template-columns: repeat(2, auto)
+      @media (max-width: $width-mobile)
+        grid-template-columns: 1fr
+  &-nav--tours
+    @media (min-width: $width-mobile)
+      margin-right: auto
+
+  &-nav .footer__title
+    @media (max-width: $width-mobile)
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: fit-content
+      gap: 8px
+      margin-bottom: 0
+      &::after
+        content: ""
+        display: inline-block
+        width: 14px
+        height: 7px
+        background-image: url('../img/icons/accord-arrow-white.svg')
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        transition: 0.3s
+
+  &__title
+    @include fontSize(16, 20)
+    font-weight: 700
+    margin-bottom: 16px
+    //text-decoration: underline
+    @media (max-width: $width-mobile)
+      margin-bottom: 12px
+      text-decoration: initial
+      font-weight: 600
+
+  &-official
+    @include fontSize(16, 20)
+    display: flex
+    flex-direction: column
+    gap: 24px
+    &__list
+      display: flex
+      flex-direction: column
+      gap: 16px
+    &__link
+      display: flex
+      align-items: center
+      gap: 6px
+      svg
+        stroke: currentColor
+
+  &-contacts
+    display: flex
+    flex-direction: column
+    @media (max-width: $width-mobile)
+      order: -1
+    &__list
+      display: grid
+      grid-template-columns: repeat(2, max-content)
+      gap: 14px 24px
+
+    &__item
+      white-space: nowrap
+      @include fontSize(14, 16)
+      &--telegram a:hover
+        color: #2AABEE
+      &--vk a:hover
+        color: #0077FF
+      &--whatsapp a:hover
+        color: #2BB741
+
+    &__link
+      display: flex
+      align-items: center
+      gap: 6px
+      svg
+        height: 20px
+        fill: currentColor
+
+  &-cooperation
+    display: flex
+    flex-direction: column
+
+  &__requisites
+    display: flex
+    flex-direction: column
+    gap: 16px
+    margin-top: 72px
+    color: $grey
+    @include fontSize(12, 14)
+    @media (max-width: $width-mobile)
+      margin-top: 56px
+    a:hover
+      text-decoration: underline
+      color: $grey
+

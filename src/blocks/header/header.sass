@@ -1,0 +1,294 @@
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
+
+.header
+  position: relative
+  padding: 20px 0
+  font-size: 20px
+  border-bottom: 1px solid rgba($black, 0.2)
+  z-index: 2
+  @media (max-width: $width-tablet)
+    padding: 16px 0
+  @media (max-width: $width-mobile)
+    padding: 12px 0
+
+  &__container
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 32px
+    font-size: 16px
+    @media (max-width: 1300px) and (min-width: $width-mobile)
+      padding: 0 50px
+    a
+      white-space: nowrap
+    @media (max-width: $width-mobile)
+      justify-content: initial
+      gap: 24px
+
+  &__logo
+    display: flex
+    align-items: center
+    flex: 0 0 40px
+    @media (max-width: $width-tablet)
+      margin-right: auto
+    svg
+      height: 40px
+      width: 40px
+      path
+        fill-opacity: 1
+        stroke-width: 0
+        stroke: rgba(black, 0.2)
+        stroke-dashoffset: 0
+        stroke-dasharray: 3000
+        animation: animate 8s
+
+
+      @keyframes animate
+        0%
+          stroke-dashoffset: 3000
+          fill-opacity: 0
+          stroke-opacity: 1
+          stroke-width: 1
+        100%
+          stroke-dashoffset: 0
+          fill-opacity: 1
+          stroke-opacity: 0
+
+
+  &__burger
+    position: relative
+    z-index: 100
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 20px
+    height: 16px
+    flex: 0 0 20px
+    @media (min-width: $width-tablet)
+      display: none
+    &-line
+      display: block
+      background-color: $black
+      width: 100%
+      height: 2px
+      border-radius: 10px
+    &-line-1
+      transform-origin: 0 0
+      transition: transform 0.4s ease-in-out
+    &-line-2
+      transition: transform 0.2s ease-in-out
+    &-line-3
+      transform-origin: 0 100%
+      transition: transform 0.4s ease-in-out
+
+
+  &__nav
+    width: 100%
+    @media (max-width: $width-tablet)
+      position: fixed
+      height: 100%
+      top: -100%
+      left: 0
+      max-height: 100vh
+      min-height: 500px
+      background-color: #fff
+      padding: 70px 50px
+      transition: $transition
+      z-index: 99
+      &.js-mobile-nav-open
+        top: 0
+      @media (max-width: $width-mobile)
+        padding: 70px 16px
+    &.js-mobile-nav-open ~ .header__burger .header__burger-line-1
+      transform: rotate(45deg)
+    &.js-mobile-nav-open ~ .header__burger .header__burger-line-2
+      transform: scale(0)
+    &.js-mobile-nav-open ~ .header__burger .header__burger-line-3
+      transform: rotate(-45deg)
+
+  &-nav__list
+    display: flex
+    gap: 24px
+    align-items: center
+    @media (max-width: $width-tablet)
+      flex-direction: column
+      gap: 20px
+      align-items: flex-start
+    @media (max-width: $width-mobile)
+      gap: 16px
+
+  &-nav__link
+    font-weight: 600
+    @media (min-width: $width-tablet)
+      padding: 10px 0
+      font-weight: 400
+
+  &-nav__item
+    &:hover .header-subnav
+      @media (min-width: $width-tablet)
+        display: grid
+        //max-height: 500px
+        padding: 16px 120px
+        transition-delay: 0.25s
+        overflow: visible
+        transition: all 0.5s ease-in, background 0.5s ease-in
+        &::before
+          display: block
+      //@media (max-width: $width-tablet)
+      //  opacity: 1
+      //  visibility: visible
+    &.header-nav__item--mobile
+      @media (min-width: $width-tablet)
+        display: none
+
+
+    &:hover .header-subnav__item
+      //transform: scale(1) translateY(0)
+      opacity: 1
+      //@for $i from 1 through 12
+      //  &:nth-child(#{$i})
+      //    transition-delay: #{0.07 * $i + 0.2}s
+
+    &--subnav
+      cursor: pointer
+      display: flex
+      align-items: center
+      gap: 8px
+      @media (max-width: $width-tablet)
+        gap: 12px
+      &::after
+        content: ""
+        display: inline-block
+        width: 10px
+        height: 6px
+        background-image: url('../img/icons/header-arrow-dwn.svg')
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        transition: 0.5s
+      @media (min-width: $width-tablet)
+        &:hover::after
+          transform: rotate(180deg)
+      @media (max-width: $width-tablet)
+        &::after
+          transform: rotate(-90deg)
+
+  &-subnav
+    display: none
+    //display: grid
+    position: absolute
+    bottom: -20px
+    left: 0
+    z-index: 1
+    grid-template-columns: repeat(3, min-content)
+    gap: 16px 44px
+    width: 100%
+    //max-height: 0
+    background-color: white
+    transform: translateY(100%)
+    overflow: hidden
+    padding: 0 120px
+    transition: all 0.1s ease-in
+    @media (min-width: $width-tablet)
+      &::before
+        content: ""
+        position: absolute
+        display: none
+        width: 50%
+        height: 20px
+        left: 0
+        top: 0
+        transform: translateY(-100%)
+    @media (max-width: $width-tablet)
+      position: fixed
+      display: flex
+      flex-direction: column
+      gap: 16px
+      transform: initial
+      padding: 70px 50px
+      top: 0
+      visibility: hidden
+      opacity: 0
+      overflow-y: scroll
+      &.js-mobile-subnav-open
+        opacity: 1
+        visibility: visible
+    @media (max-width: $width-mobile)
+      padding: 70px 16px
+
+  &-subnav__button-back
+    position: absolute
+    top: 28px
+    background-image: url('../img/icons/header-arrow-dwn.svg')
+    width: 14px
+    height: 8px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    transform: rotate(90deg)
+    @media (min-width: $width-tablet)
+      display: none
+
+
+
+  &-subnav__item // из примера
+    //transform: scale(1.15) translateY(-30px)
+    //opacity: 0
+    transition: transform 0.5s $cubic, opacity 0.6s
+    //@for $i from 1 through 12
+    //  &:nth-child(#{$i})
+    //    transition-delay: #{0.56 - ($i * 0.07)}s
+
+  .live-search
+    position: relative
+    width: 100%
+    &:hover #search
+      border-color: grey
+    &:hover .live-search__input
+      background-color: #f1f1f1
+    @media (min-width: $width-tablet)
+      &.live-search--mobile
+        display: none
+        visibility: hidden
+    @media (max-width: $width-tablet)
+      &.live-search--mobile
+        display: block
+        visibility: visible
+      &.live-search--desktop
+        display: none
+        visibility: hidden
+
+
+  .live-search__input
+    border: 1px solid #BFBFBF
+    height: 40px
+    border-radius: 16px
+    width: 100%
+    min-width: 150px
+    padding: 5px 20px
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration
+      -webkit-appearance: none
+      appearance: none
+    & + svg
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      right: 16px
+      width: 24px
+      height: 24px
+
+  &__tel
+    display: flex
+    align-items: center
+    flex: 0 0 24px
+    font-weight: 700
+    svg
+      width: 24px
+      height: 24px
+      @media (min-width: 1400px)
+        display: none
+    span
+      @media (max-width: 1400px)
+        display: none

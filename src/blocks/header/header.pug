@@ -1,0 +1,88 @@
+mixin header-subnav__item(href, name)
+    li.header-subnav__item
+        a.header-subnav__link(href=href)=name
+
+header.header
+    .header__container.container
+        a.header__logo(href="/")
+            include ../../img/icons/logo.svg
+
+        nav.header__nav.header-nav
+            ul.header-nav__list
+
+                li.header-nav__item.header-nav__item--subnav
+                    a.header-nav__link.header-nav__link--subnav Экскурсии
+
+                    // Подменю 1
+                    ul.header__subnav.header-subnav
+                        li.header-subnav__button-back
+
+                        +header-subnav__item("##", "По дворам и парадным")
+                        +header-subnav__item("##", "Ночные и вечерние")
+                        +header-subnav__item("##", "Индивидуальные")
+                        +header-subnav__item("##", "Под развод мостов")
+                        +header-subnav__item("##", "Для школьников")
+                        +header-subnav__item("##", "По пригородам")
+                        +header-subnav__item("##", "Салют с крыши")
+                        +header-subnav__item("##", "Свидание на крыше")
+                        +header-subnav__item("##", "Авторские")
+                        +header-subnav__item("##", "Обзорные")
+                        +header-subnav__item("##", "Водные")
+
+                li.header-nav__item.header-nav__item--subnav
+                    a.header-nav__link.header-nav__link--subnav Туры
+
+                    // Подменю 2
+                    ul.header__subnav.header-subnav
+                        li.header-subnav__button-back
+
+                        li.header-subnav__item
+                            a.header-subnav__link(href="##") Индивидуальные
+                        li.header-subnav__item
+                            a.header-subnav__link(href="##") Групповые
+                        li.header-subnav__item
+                            a.header-subnav__link(href="##") Классические
+
+                        li.header-subnav__item
+                            a.header-subnav__link(href="##") Школьные в Санкт-Петербурге
+                        li.header-subnav__item
+                            a.header-subnav__link(href="##") Школьные по России
+                        li.header-subnav__item
+                            a.header-subnav__link(href="##") Тест на тур
+
+
+                li.live-search.live-search--desktop
+                    input.live-search__input(type="search" placeholder="Поиск" autocomplete="off" id="search-desktop")
+                    include ../../img/icons/search-icon.svg
+                    ul.live-search__results
+
+                li.header-nav__item
+                    a.header-nav__link(href="##") Корпоративные туры
+
+                li.header-nav__item
+                    a.header-nav__link(href="##") Аренда катеров и яхт
+
+                li.header-nav__item
+                    a.header-nav__link(href="##") Сотрудничество
+
+                li.header-nav__item.header-nav__item--mobile
+                    a.header-nav__link(href="##") О нас
+                li.header-nav__item.header-nav__item--mobile
+                    a.header-nav__link(href="##") Часто задаваемые вопросы
+                li.header-nav__item.header-nav__item--mobile
+                    a.header-nav__link(href="##") Контакты
+
+        .live-search.live-search--mobile
+            input.live-search__input(type="search" placeholder="Поиск" autocomplete="off" id="search-mobile")
+            include ../../img/icons/search-icon.svg
+            ul.live-search__results
+
+
+        a.header__tel(href="tel:+79111562004")
+            span +7 (911) 156-20-04
+            include ../../img/icons/phone.svg
+
+        button(type="button").header__burger
+            span.header__burger-line.header__burger-line-1
+            span.header__burger-line.header__burger-line-2
+            span.header__burger-line.header__burger-line-3

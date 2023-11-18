@@ -4,7 +4,6 @@ if (accordionItems) {
   const toggleClass = (item) => item.classList.toggle('js-accordion-active');
 
   accordionItems.forEach(accordionItem => {
-    console.log(accordionItem)
     accordionItem.addEventListener('click', () => toggleClass(accordionItem));
   });
 }

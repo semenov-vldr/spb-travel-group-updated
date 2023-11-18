@@ -1,8 +1,6 @@
 function mobileNav () {
   const header = document.querySelector("header.header");
-
   if (!header) return;
-
   const nav = header.querySelector(".header__nav");
   const burger = header.querySelector(".header__burger");
 
@@ -13,7 +11,6 @@ function mobileNav () {
       subnav.classList.remove("js-mobile-subnav-open")
     })
   });
-
 
   const navLinksHasSubNavs = nav.querySelectorAll(".header-nav__link--subnav");
 
@@ -31,8 +28,32 @@ function mobileNav () {
   });
 
 
+  const mobileWidthMediaQuery = window.matchMedia('(max-width: 1100px)');
+
+  if (mobileWidthMediaQuery.matches) {
+    const liveSearchInput = header.querySelector('.live-search--mobile .live-search__input');
+    const headerTel = header.querySelector(".header__tel");
+    const headerBurger = header.querySelector(".header__burger");
+
+    liveSearchInput.addEventListener("focus", () => {
+      headerTel.style.display = "none";
+      headerBurger.style.display = "none";
+    });
+
+    liveSearchInput.addEventListener("blur", () => {
+      headerTel.style.display = "";
+      headerBurger.style.display = "";
+    });
+
+  }
+
+
+
+
+
 }
 
 mobileNav()
+
 
 // //a.header__nav-link(href="./../blog/post-1.html") Post-1

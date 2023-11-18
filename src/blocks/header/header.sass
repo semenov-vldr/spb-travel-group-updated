@@ -6,6 +6,7 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
   font-size: 20px
   border-bottom: 1px solid rgba($black, 0.2)
   z-index: 2
+  background-color: $white
   @media (max-width: $width-tablet)
     padding: 16px 0
   @media (max-width: $width-mobile)
@@ -240,13 +241,11 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
     //  &:nth-child(#{$i})
     //    transition-delay: #{0.56 - ($i * 0.07)}s
 
+  // ---- Live Search ----
   .live-search
     position: relative
     width: 100%
-    &:hover #search
-      border-color: grey
-    &:hover .live-search__input
-      background-color: #f1f1f1
+    background-color: $white
     @media (min-width: $width-tablet)
       &.live-search--mobile
         display: none
@@ -258,7 +257,6 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
       &.live-search--desktop
         display: none
         visibility: hidden
-
 
   .live-search__input
     border: 1px solid #BFBFBF
@@ -278,6 +276,34 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
       right: 16px
       width: 24px
       height: 24px
+    &:focus ~ .live-search-results
+      display: flex
+    &:focus + svg
+      stroke: $black
+
+  .live-search-results
+    position: absolute
+    width: 100%
+    background-color: $white
+    padding: 20px
+    bottom: -4px
+    transform: translateY(100%)
+    border-radius: 16px
+    display: none
+    flex-direction: column
+    gap: 12px
+    &__link
+      display: inline-block
+      width: 100%
+      font-weight: 600
+      font-size: 18px
+      @media (max-width: $width-mobile)
+        font-size: 16px
+    &__link:hover
+      text-decoration: underline
+    @media (max-width: $width-mobile)
+      min-width: fit-content
+
 
   &__tel
     display: flex

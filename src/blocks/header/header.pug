@@ -4,7 +4,7 @@ mixin header-subnav__item(href, name)
 
 header.header
     .header__container.container
-        a.header__logo(href="/")
+        a.header__logo(href="index.html")
             include ../../img/icons/logo.svg
 
         nav.header__nav.header-nav
@@ -29,7 +29,7 @@ header.header
                         +header-subnav__item("##", "Обзорные")
                         +header-subnav__item("##", "Водные")
 
-                li.header-nav__item.header-nav__item--subnav
+                li.header-nav__item.header-nav__item--subnav.second-subnav
                     a.header-nav__link.header-nav__link--subnav Туры
 
                     // Подменю 2
@@ -54,7 +54,15 @@ header.header
                 li.live-search.live-search--desktop
                     input.live-search__input(type="search" placeholder="Поиск" autocomplete="off" id="search-desktop")
                     include ../../img/icons/search-icon.svg
-                    ul.live-search__results
+                    ul.live-search__results.live-search-results
+                        li.live-search-results__item
+                            a.live-search-results__link(href="##") Императорские дворцы
+                        li.live-search-results__item
+                            a.live-search-results__link(href="##") Николаевский дворец
+                        li.live-search-results__item
+                            a.live-search-results__link(href="##") Мраморный дворец
+                        li.live-search-results__item
+                            a.live-search-results__link(href="##") Николаевский дворец
 
                 li.header-nav__item
                     a.header-nav__link(href="##") Корпоративные туры
@@ -75,7 +83,15 @@ header.header
         .live-search.live-search--mobile
             input.live-search__input(type="search" placeholder="Поиск" autocomplete="off" id="search-mobile")
             include ../../img/icons/search-icon.svg
-            ul.live-search__results
+            ul.live-search__results.live-search-results
+                li.live-search-results__item
+                    a.live-search-results__link(href="##") Императорские дворцы
+                li.live-search-results__item
+                    a.live-search-results__link(href="##") Николаевский дворец
+                li.live-search-results__item
+                    a.live-search-results__link(href="##") Мраморный дворец
+                li.live-search-results__item
+                    a.live-search-results__link(href="##") Николаевский дворец
 
 
         a.header__tel(href="tel:+79111562004")

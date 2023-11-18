@@ -25,7 +25,6 @@ if (accordionItems) {
     return item.classList.toggle('js-accordion-active');
   };
   accordionItems.forEach(function (accordionItem) {
-    console.log(accordionItem);
     accordionItem.addEventListener('click', function () {
       return toggleClass(accordionItem);
     });
@@ -70,6 +69,20 @@ function mobileNav() {
       subNav.classList.remove("js-mobile-subnav-open");
     });
   });
+  var mobileWidthMediaQuery = window.matchMedia('(max-width: 1100px)');
+  if (mobileWidthMediaQuery.matches) {
+    var liveSearchInput = header.querySelector('.live-search--mobile .live-search__input');
+    var headerTel = header.querySelector(".header__tel");
+    var headerBurger = header.querySelector(".header__burger");
+    liveSearchInput.addEventListener("focus", function () {
+      headerTel.style.display = "none";
+      headerBurger.style.display = "none";
+    });
+    liveSearchInput.addEventListener("blur", function () {
+      headerTel.style.display = "";
+      headerBurger.style.display = "";
+    });
+  }
 }
 mobileNav();
 

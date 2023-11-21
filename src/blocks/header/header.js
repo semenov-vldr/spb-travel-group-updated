@@ -4,6 +4,7 @@ function mobileNav () {
   const nav = header.querySelector(".header__nav");
   const burger = header.querySelector(".header__burger");
 
+  // Открытие мобильного меню Бургер
   burger.addEventListener("click", () => {
     nav.classList.toggle("js-mobile-nav-open");
     document.querySelector('html').classList.toggle('js-no-scroll');
@@ -12,6 +13,8 @@ function mobileNav () {
     })
   });
 
+
+  // Переключение экранов мобильных меню и подменю
   const navLinksHasSubNavs = nav.querySelectorAll(".header-nav__link--subnav");
 
   navLinksHasSubNavs.forEach(navLinksHasSubNav => {
@@ -28,28 +31,40 @@ function mobileNav () {
   });
 
 
+  // Live Search
   const mobileWidthMediaQuery = window.matchMedia('(max-width: 1100px)');
+  const liveSearchInputDesktop = header.querySelector('.live-search--desktop .live-search__input');
+  const headerUnderlay = header.querySelector(".header__underlay");
+
+  function handleHeaderUnderlay (liveSearchInput) {
+    liveSearchInput.addEventListener("focus", () => {
+      headerUnderlay.classList.add('js-underlay-active');
+    });
+
+    liveSearchInput.addEventListener("blur", () => {
+      headerUnderlay.classList.remove('js-underlay-active');
+    });
+  }
+
+  handleHeaderUnderlay(liveSearchInputDesktop)
 
   if (mobileWidthMediaQuery.matches) {
-    const liveSearchInput = header.querySelector('.live-search--mobile .live-search__input');
+    const liveSearchInputMobile = header.querySelector('.live-search--mobile .live-search__input');
     const headerTel = header.querySelector(".header__tel");
     const headerBurger = header.querySelector(".header__burger");
+    handleHeaderUnderlay(liveSearchInputMobile)
 
-    liveSearchInput.addEventListener("focus", () => {
+    liveSearchInputMobile.addEventListener("focus", () => {
       headerTel.style.display = "none";
       headerBurger.style.display = "none";
     });
 
-    liveSearchInput.addEventListener("blur", () => {
+    liveSearchInputMobile.addEventListener("blur", () => {
       headerTel.style.display = "";
       headerBurger.style.display = "";
     });
 
   }
-
-
-
-
 
 }
 

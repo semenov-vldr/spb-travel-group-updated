@@ -18,6 +18,40 @@
 "use strict";
 "use strict";
 
+new Swiper('.catalog__slider', {
+  // pagination: {
+  //   el: '.swiper-pagination',
+  //   clickable: true,
+  // },
+
+  // Откл функционала, если слайдов меньше, чем нужно
+  watchOverflow: true,
+  //centeredSlides: true,
+
+  // Отступ между слайдами
+  //spaceBetween: 15,
+
+  loop: true,
+  // Стартовый слайд
+  initialSlide: 0,
+  // Брейк поинты (адаптив)
+  // Ширина экрана
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 16
+    },
+    480: {
+      slidesPerView: 1.5
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 32
+    }
+  }
+});
+"use strict";
+
 var accordionItems = document.querySelectorAll('.accordion__item'); // список элементов аккордиона
 
 if (accordionItems) {
@@ -30,6 +64,40 @@ if (accordionItems) {
     });
   });
 }
+"use strict";
+
+new Swiper('.first-time__slider', {
+  // pagination: {
+  //   el: '.swiper-pagination',
+  //   clickable: true,
+  // },
+
+  // Откл функционала, если слайдов меньше, чем нужно
+  watchOverflow: true,
+  //centeredSlides: true,
+
+  // Отступ между слайдами
+  //spaceBetween: 15,
+
+  loop: true,
+  // Стартовый слайд
+  initialSlide: 0,
+  // Брейк поинты (адаптив)
+  // Ширина экрана
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 16
+    },
+    480: {
+      slidesPerView: 1.5
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 32
+    }
+  }
+});
 "use strict";
 
 function mobileFooterNav() {
@@ -267,7 +335,8 @@ var Slideshow = /*#__PURE__*/function () {
       this.DOM.paginationItemsLoader = paginationEl.querySelectorAll('.pagination-separator-loader');
       this.DOM.activePaginationItem = paginationEl.querySelector('.slideshow-pagination-item.active');
       this.DOM.activePaginationItemLoader = this.DOM.activePaginationItem.querySelector('.pagination-separator-loader');
-      console.log(swiper.pagination);
+
+      //console.log(swiper.pagination);
       // console.log(swiper.activeIndex);
 
       // Reset and animate

@@ -1,0 +1,33 @@
+.first-time
+
+  &__slider
+  //overflow: hidden
+
+  &__item
+    position: relative
+    max-width: 336px
+    min-width: 242px
+    border-radius: 32px
+    overflow: hidden
+    padding: 16px
+    display: flex
+    flex-direction: column
+    gap: 16px
+    background-color: $white
+    @media (max-width: $width-mobile)
+      padding: 12px
+      gap: 12px
+  &__img
+    width: 100%
+    object-fit: cover
+    aspect-ratio: 1 / 1
+    border-radius: 32px
+
+  &__title
+    position: relative
+    z-index: 1
+    @include fontSize(16, 24)
+    line-height: 1
+    text-align: center
+
+

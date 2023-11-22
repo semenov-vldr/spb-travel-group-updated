@@ -154,7 +154,7 @@ class Slideshow {
     this.DOM.activePaginationItem = paginationEl.querySelector('.slideshow-pagination-item.active');
     this.DOM.activePaginationItemLoader = this.DOM.activePaginationItem.querySelector('.pagination-separator-loader');
 
-    console.log(swiper.pagination);
+    //console.log(swiper.pagination);
     // console.log(swiper.activeIndex);
 
     // Reset and animate

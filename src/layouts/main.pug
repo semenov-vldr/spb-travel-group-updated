@@ -32,25 +32,18 @@ html(lang="ru-RU")
 
         // GSAP
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js")
-        //script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js")
-        //script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js")
-        //script(src="https://assets.codepen.io/16327/ScrollSmoother.min.js")
-
 
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
         script(src="https://cdn.jsdelivr.net/npm/charming@3.0.2/index.min.js")
-        <script>!function(e){"undefined"==typeof module?this.charming=e:module.exports=e}(function(e,n){"use strict";n=n||{};var t=n.tagName||"span",o=null!=n.classPrefix?n.classPrefix:"char",r=1,a=function(e){for(var n=e.parentNode,a=e.nodeValue,c=a.length,l=-1;++l<c;){var d=document.createElement(t);o&&(d.className=o+r,r++),d.appendChild(document.createTextNode(a[l])),n.insertBefore(d,e)}n.removeChild(e)};return function c(e){for(var n=[].slice.call(e.childNodes),t=n.length,o=-1;++o<t;)c(n[o]);e.nodeType===Node.TEXT_NODE&&a(e)}(e),e});
-        </script>
 
-
-
+        script !function(e){"undefined"==typeof module?this.charming=e:module.exports=e}(function(e,n){"use strict";n=n||{};var t=n.tagName||"span",o=null!=n.classPrefix?n.classPrefix:"char",r=1,a=function(e){for(var n=e.parentNode,a=e.nodeValue,c=a.length,l=-1;++l<c;){var d=document.createElement(t);o&&(d.className=o+r,r++),d.appendChild(document.createTextNode(a[l])),n.insertBefore(d,e)}n.removeChild(e)};return function c(e){for(var n=[].slice.call(e.childNodes),t=n.length,o=-1;++o<t;)c(n[o]);e.nodeType===Node.TEXT_NODE&&a(e)}(e),e});
 
     body
         include ../blocks/header/header
         main.main
             block content
         include ../blocks/footer/footer
-    script(src="assets/scripts/libs.min.js")
-    script(src="assets/scripts/main.js" type="module")
+    script(src="/assets/scripts/libs.min.js")
+    script(src="/assets/scripts/main.js" type="module")
     block script

@@ -40,7 +40,6 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
     @media (max-width: $width-mobile)
       justify-content: initial
       gap: 24px
-      font-size: 18px
 
   &__logo
     display: flex
@@ -51,25 +50,25 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
     svg
       height: 40px
       width: 40px
-      path
-        fill-opacity: 1
-        stroke-width: 0
-        stroke: rgba(black, 0.2)
-        stroke-dashoffset: 0
-        stroke-dasharray: 3000
-        animation: animate 8s
+      //path
+      //  fill-opacity: 1
+      //  stroke-width: 0
+      //  stroke: rgba(black, 0.2)
+      //  stroke-dashoffset: 0
+      //  stroke-dasharray: 3000
+      //  animation: animate 8s
 
 
-      @keyframes animate
-        0%
-          stroke-dashoffset: 3000
-          fill-opacity: 0
-          stroke-opacity: 1
-          stroke-width: 1
-        100%
-          stroke-dashoffset: 0
-          fill-opacity: 1
-          stroke-opacity: 0
+      //@keyframes animate
+      //  0%
+      //    stroke-dashoffset: 3000
+      //    fill-opacity: 0
+      //    stroke-opacity: 1
+      //    stroke-width: 1
+      //  100%
+      //    stroke-dashoffset: 0
+      //    fill-opacity: 1
+      //    stroke-opacity: 0
 
 
   &__burger

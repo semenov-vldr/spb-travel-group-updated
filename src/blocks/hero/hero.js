@@ -1,5 +1,6 @@
 // The Slideshow class.
 class Slideshow {
+
   constructor(el) {
 
     this.DOM = {el: el};
@@ -15,8 +16,8 @@ class Slideshow {
 
     // Set the slideshow
     this.init();
-
   }
+
   init() {
 
     var self = this;
@@ -24,7 +25,7 @@ class Slideshow {
     // Charmed title
     this.DOM.slideTitle = this.DOM.el.querySelectorAll('.slide-title');
     this.DOM.slideTitle.forEach((slideTitle) => {
-      //charming(slideTitle);
+      charming(slideTitle);
     });
 
     // Set the slider
@@ -165,7 +166,11 @@ class Slideshow {
 
 
   }
-
 }
 
-const slideshow = new Slideshow(document.querySelector('.slideshow'));
+const slideshowBlock = document.querySelector('.slideshow')
+if (slideshowBlock) {
+  const slideshow = new Slideshow(slideshowBlock);
+}
+
+

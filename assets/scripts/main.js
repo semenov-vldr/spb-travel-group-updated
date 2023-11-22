@@ -140,7 +140,7 @@ var Slideshow = /*#__PURE__*/function () {
       // Charmed title
       this.DOM.slideTitle = this.DOM.el.querySelectorAll('.slide-title');
       this.DOM.slideTitle.forEach(function (slideTitle) {
-        //charming(slideTitle);
+        charming(slideTitle);
       });
 
       // Set the slider
@@ -284,4 +284,7 @@ var Slideshow = /*#__PURE__*/function () {
   }]);
   return Slideshow;
 }();
-var slideshow = new Slideshow(document.querySelector('.slideshow'));
+var slideshowBlock = document.querySelector('.slideshow');
+if (slideshowBlock) {
+  var slideshow = new Slideshow(slideshowBlock);
+}

@@ -208,7 +208,7 @@ var Slideshow = /*#__PURE__*/function () {
       // Charmed title
       this.DOM.slideTitle = this.DOM.el.querySelectorAll('.slide-title');
       this.DOM.slideTitle.forEach(function (slideTitle) {
-        charming(slideTitle);
+        //charming(slideTitle);
       });
 
       // Set the slider

@@ -25,7 +25,7 @@ class Slideshow {
     // Charmed title
     this.DOM.slideTitle = this.DOM.el.querySelectorAll('.slide-title');
     this.DOM.slideTitle.forEach((slideTitle) => {
-      charming(slideTitle);
+      //charming(slideTitle);
     });
 
     // Set the slider

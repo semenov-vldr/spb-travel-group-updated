@@ -164,7 +164,6 @@ class Slideshow {
       scaleX: 1,
     });
 
-
   }
 }
 

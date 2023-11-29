@@ -1,17 +1,22 @@
-function mobileFooterNav () {
-  const footer = document.querySelector("footer.footer");
+const mapFooter = document.querySelector('#footer-map');
 
-  if (!footer) return;
+if (mapFooter) ymaps.ready(initYaMap);
 
-  const footerNavs = footer.querySelectorAll(".footer-nav");
 
-  footerNavs.forEach(footerNav => {
-    const footerTitle = footerNav.querySelector(".footer__title");
+function initYaMap() {
+  const pointAddress = [59.986484, 30.287868];
+  let myMap = new ymaps.Map('footer-map', {
 
-    footerTitle.addEventListener("click", () => {
-      footerTitle.classList.toggle("js-mobile-nav-open");
-    });
-  })
-}
+    center: pointAddress,
+    zoom: 13,
+    controls: [],
+  });
+  const placemarkAddress = new ymaps.Placemark(pointAddress, {}, {
+    iconLayout: 'default#image',
+    //iconImageHref: './assets/img/icons/map-baloon.svg',
+    // iconImageSize: [144, 68],
+    // iconImageOffset: [-70, -68]
+  });
 
-mobileFooterNav()
+  myMap.geoObjects.add(placemarkAddress);
+};

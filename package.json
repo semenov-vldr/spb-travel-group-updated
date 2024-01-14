@@ -43,6 +43,7 @@
     "last 5 versions"
   ],
   "dependencies": {
-    "air-datepicker": "^3.4.0"
+    "air-datepicker": "^3.4.0",
+    "firebase": "^10.6.0"
   }
 }

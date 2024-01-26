@@ -1,0 +1,67 @@
+.selection.selection--excursions
+    .selection__container.container
+        h1.selection__title Экскурсии
+
+        section.selection__tags-cloud.tags-cloud
+            ul.tags-cloud__list
+
+                li.tags-cloud__item
+                    a.tags-cloud__link(href="##") Автобусные
+                li.tags-cloud__item
+                    a.tags-cloud__link(href="##") Пешеходные
+                li.tags-cloud__item
+                    a.tags-cloud__link(href="##") Новогодние
+                li.tags-cloud__item
+                    a.tags-cloud__link(href="##") Необычные
+                li.tags-cloud__item
+                    a.tags-cloud__link(href="##") Водные
+                li.tags-cloud__item
+                    a.tags-cloud__link(href="##") Интерьерные
+
+        section.selection__grid
+            // Фильтр
+            aside.selection__filter.filter
+                // Секция | Цена
+                fieldset.filter__section.filter-section.filter-section--price
+                    h4.filter-section__title Цена, ₽
+                    include ../_items/range/range
+                // Секция | Дата
+                fieldset.filter__section.filter-section.filter-section--date
+                    h4.filter-section__title Дата
+                    input#datepicker(placeholder="Выберите дату" autocomplete="off")
+                // Секция | Формат
+                fieldset.filter__section.filter-section.filter-section--format
+                    h4.filter-section__title Формат
+                    .filter-section__list
+                        .filter-section__row.filter-radio
+                            input(id="group" type="radio" name="format" value="group")
+                            label(for="group") Групповые
+                        .filter-section__row.filter-radio
+                            input(id="indi" type="radio" name="format" value="indi")
+                            label(for="indi") Индивидуальные
+
+
+
+            .selection__events.selection-events
+                .selection-events__sorting.events-sorting
+                    span.events-sorting__title Сортировать по:
+                    button.events-sorting__button Популярности
+                    button.events-sorting__button Цене
+                    button.events-sorting__button Продолжительности
+                .selection-events__cards
+                    a.selection-events__card.event-card(href="##")
+                        img.event-card__img(src="https://thumb.tildacdn.com/tild3539-6566-4139-a134-366565303431/-/format/webp/radik-sitdikov-IRApk.jpg")
+                        .event-card__content
+                            h2.event-card__title Императорские и великокняжеские дворцы Санкт-Петербурга
+                            p.event-card__text Петербург - город дворцов! Их количество, красота и роскошь, великолепный внешний облик поражает воображение
+                            .event-card__bottom
+                                span.event-card__price 1500 ₽
+                                span.event-card__duration 1.5 ч
+
+
+
+
+
+
+
+

@@ -17,37 +17,36 @@ html(lang="ru-RU")
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
 
         //favicon
-        link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
-        link(rel="icon" href="favicon.ico" type="image/x-icon")
+        //link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+        //link(rel="icon" href="favicon.ico" type="image/x-icon")
 
-        link(rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css")
-        link(rel="stylesheet" type='text/css' href="assets/css/libs.css")
-        link(rel="stylesheet" type='text/css' href="assets/css/main.css")
+        link(rel="stylesheet" type='text/css' href="./assets/css/libs.min.css")
+        link(rel="stylesheet" type='text/css' href="./assets/css/main.css")
 
         //[if lt IE 9]
         script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
         //[endif]
 
         <!-- Yandex map script -->
-        //script(src="https://api-maps.yandex.ru/2.1/?apikey=dad86943-dfef-45bd-9c5e-c404323cb093&lang=ru_RU" type="text/javascript")
+        script(src="https://api-maps.yandex.ru/2.1/?apikey=dad86943-dfef-45bd-9c5e-c404323cb093&lang=ru_RU" type="text/javascript")
 
         //axios
-        //script(src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js")
 
         // GSAP
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js")
 
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
         //script(src="https://cdn.jsdelivr.net/npm/charming@3.0.2/index.min.js")
 
-        //script !function(e){"undefined"==typeof module?this.charming=e:module.exports=e}(function(e,n){"use strict";n=n||{};var t=n.tagName||"span",o=null!=n.classPrefix?n.classPrefix:"char",r=1,a=function(e){for(var n=e.parentNode,a=e.nodeValue,c=a.length,l=-1;++l<c;){var d=document.createElement(t);o&&(d.className=o+r,r++),d.appendChild(document.createTextNode(a[l])),n.insertBefore(d,e)}n.removeChild(e)};return function c(e){for(var n=[].slice.call(e.childNodes),t=n.length,o=-1;++o<t;)c(n[o]);e.nodeType===Node.TEXT_NODE&&a(e)}(e),e});
+
+
 
     body
         include ../blocks/header/header
         main.main
             block content
         include ../blocks/footer/footer
-    script(src="assets/scripts/libs.min.js")
-    script(src="assets/scripts/main.js" type="module")
+    script(src="./assets/scripts/libs.min.js")
+    script(src="./assets/scripts/main.js" type="module")
     block script

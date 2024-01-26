@@ -143,16 +143,12 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
     &:hover .header-subnav
       @media (min-width: $width-tablet)
         display: grid
-        //max-height: 500px
         padding: 16px 120px
         transition-delay: 0.25s
         overflow: visible
         transition: all 0.5s ease-in, background 0.5s ease-in
         &::before
           display: block
-      //@media (max-width: $width-tablet)
-      //  opacity: 1
-      //  visibility: visible
     &.header-nav__item--mobile
       @media (min-width: $width-tablet)
         display: none
@@ -191,7 +187,6 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
 
   &-subnav
     display: none
-    //display: grid
     position: absolute
     bottom: -20px
     left: 0
@@ -199,7 +194,6 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
     grid-template-columns: repeat(3, min-content)
     gap: 16px 44px
     width: 100%
-    //max-height: 0
     background-color: white
     transform: translateY(100%)
     overflow: hidden

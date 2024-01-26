@@ -17,7 +17,6 @@ const babel = require('gulp-babel');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 
-
 // ---- Tasks ----
 
 // Clean
@@ -71,7 +70,7 @@ gulp.task("sass:dev", function () { // Добавить autoprefixer, csso
 });
 
 // Styles Libs
-gulp.task("style:libs:dev", function () {
+gulp.task("styleLibs:dev", function () {
   return gulp
     .src("./src/libs/**/*.css")
     .pipe(concatCss("libs.min.css"))

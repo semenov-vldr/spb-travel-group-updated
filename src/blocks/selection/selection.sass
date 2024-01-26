@@ -1,0 +1,106 @@
+.selection
+  margin-top: 32px
+
+  &__title
+    @include fontSize(24, 36)
+    font-weight: 600
+    margin-bottom: 24px
+
+    // Tags Cloud
+  .tags-cloud
+    margin-bottom: 18px
+    &__list
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      gap: 12px
+    &__item
+      padding: 6px 16px
+      border-radius: 20px
+      border: 1px solid $grey
+      transition: $transition
+      &:hover
+        background-color: $white
+
+  &__grid
+    display: grid
+    grid-template-columns: 312px 1fr
+    column-gap: 56px
+
+  .filter
+    display: flex
+    flex-direction: column
+    gap: 24px
+    background-color: $white
+    border-radius: 8px
+    padding: 24px
+
+    input[type="text"],
+    input[type="number"]
+      outline: none
+      border: 1px solid $grey
+      border-radius: 4px
+      padding: 8px 14px
+      width: 100%
+      -moz-appearance: textfield
+
+    // Section
+    &-section
+
+      &__title
+        @include fontSize(16, 20)
+        font-weight: 600
+        margin-bottom: 12px
+
+      &__list
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+      .filter-radio
+
+        input[type="radio"]
+          display: none
+          &:checked + label:after
+            content: ""
+
+        label
+          display: flex
+          align-items: center
+          gap: 8px
+          cursor: pointer
+          position: relative
+          user-select: none
+          &::before
+            content: ""
+            display: inline-block
+            width: 24px
+            height: 24px
+            border-radius: 50%
+            border: 1px solid $grey
+
+
+
+
+
+  &-events
+    &__cards
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 32px
+
+  .events-sorting
+    display: flex
+    gap: 16px
+    margin-bottom: 32px
+
+    &__title
+      margin-right: 4px
+    &__button:hover
+      text-decoration: underline
+
+
+
+
+  .datepicker
+    width: 100%

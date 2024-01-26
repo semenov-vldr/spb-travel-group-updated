@@ -1,0 +1,1 @@
+const datepicker = new Datepicker("#datepicker");

@@ -1,6 +1,8 @@
 .selection.selection--excursions
     .selection__container.container
-        h1.selection__title Экскурсии
+        .selection__header
+            h1.selection__title Экскурсии
+            button.filter-btn(style="background-image: url('./assets/img/icons/filter-icon.svg')")
 
         section.selection__tags-cloud.tags-cloud
             ul.tags-cloud__list
@@ -19,44 +21,50 @@
                     a.tags-cloud__link(href="##") Интерьерные
 
         section.selection__grid
-            // Фильтр
-            aside.selection__filter.filter
-                // Секция | Цена
-                fieldset.filter__section.filter-section.filter-section--price
-                    h4.filter-section__title Цена, ₽
-                    include ../_items/range/range
-                // Секция | Дата
-                fieldset.filter__section.filter-section.filter-section--date
-                    h4.filter-section__title Дата
-                    input#datepicker(placeholder="Выберите дату" autocomplete="off")
-                // Секция | Формат
-                fieldset.filter__section.filter-section.filter-section--format
-                    h4.filter-section__title Формат
-                    .filter-section__list
-                        .filter-section__row.filter-radio
-                            input(id="group" type="radio" name="format" value="group")
-                            label(for="group") Групповые
-                        .filter-section__row.filter-radio
-                            input(id="indi" type="radio" name="format" value="indi")
-                            label(for="indi") Индивидуальные
-
-
+            include ../filter/filter-exc
 
             .selection__events.selection-events
                 .selection-events__sorting.events-sorting
-                    span.events-sorting__title Сортировать по:
-                    button.events-sorting__button Популярности
-                    button.events-sorting__button Цене
-                    button.events-sorting__button Продолжительности
+                    .events-sorting__row
+                        span.events-sorting__title Сортировать по:
+                        button.events-sorting__button Популярности
+                        button.events-sorting__button Цене
+                        button.events-sorting__button Продолжительности
+                    select
+                        option Популярности
+                        option Цене
+                        option Продолжительности
                 .selection-events__cards
+
                     a.selection-events__card.event-card(href="##")
-                        img.event-card__img(src="https://thumb.tildacdn.com/tild3539-6566-4139-a134-366565303431/-/format/webp/radik-sitdikov-IRApk.jpg")
+                        .event-card__img
+                            img(src="https://thumb.tildacdn.com/tild3539-6566-4139-a134-366565303431/-/format/webp/radik-sitdikov-IRApk.jpg")
                         .event-card__content
                             h2.event-card__title Императорские и великокняжеские дворцы Санкт-Петербурга
                             p.event-card__text Петербург - город дворцов! Их количество, красота и роскошь, великолепный внешний облик поражает воображение
                             .event-card__bottom
                                 span.event-card__price 1500 ₽
                                 span.event-card__duration 1.5 ч
+
+                    a.selection-events__card.event-card(href="##")
+                        .event-card__img
+                            img(src="https://static.tildacdn.com/tild6166-3237-4065-b163-363065393963/xmi2NhittV_2gZo-V5RG.jpg")
+                        .event-card__content
+                            h2.event-card__title Гатчина. Большая экскурсия. 2 дворца
+                            p.event-card__text Петербург - город дворцов! Их количество, красота и роскошь, великолепный внешний облик поражает воображение
+                            .event-card__bottom
+                                span.event-card__price 2 300₽
+                                span.event-card__duration 7 ч
+
+                    a.selection-events__card.event-card(href="##")
+                        .event-card__img
+                            img(src="https://static.tildacdn.com/tild6338-6533-4138-b536-373237326437/C59D2DE4-2023-4F11-9.jpeg")
+                        .event-card__content
+                            h2.event-card__title Тайны средневекового Выборга
+                            p.event-card__text Петербург - город дворцов! Их количество, красота и роскошь, великолепный внешний облик поражает воображение
+                            .event-card__bottom
+                                span.event-card__price 2500 ₽
+                                span.event-card__duration 11 ч
 
 
 

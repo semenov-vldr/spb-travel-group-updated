@@ -1,0 +1,93 @@
+// Фильтр
+form.filter(id="filter-exc")
+    .filter__header
+        strong.filter__title Фильтр
+        button.filter__close(type="button")
+            include ../../img/icons/close.svg
+    // Секция | Цена
+    fieldset.filter__section.filter-section.filter-section--price
+         h4.filter-section__title Цена, ₽
+         include ../_items/range/range-price
+    // Секция | Дата
+    fieldset.filter__section.filter-section.filter-section--date
+         h4.filter-section__title Дата
+         input#datepicker(placeholder="Выберите дату" autocomplete="off")
+    fieldset.filter__section.filter-section.filter-section--price
+        h4.filter-section__title Продолжительность, ч
+        include ../_items/range/range-duration
+    // Секция | Формат
+    fieldset.filter__section.filter-section.filter-section--format
+         h4.filter-section__title Формат
+         .filter-section__list
+             .filter-section__row.filter-radio
+                 input(id="group" type="radio" name="format" value="group")
+                 label(for="group") Групповые
+             .filter-section__row.filter-radio
+                 input(id="indi" type="radio" name="format" value="indi")
+                 label(for="indi") Индивидуальные
+
+    // Секция | Время суток
+    fieldset.filter__section.filter-section.filter-section--times-of-day
+         h4.filter-section__title Время суток
+         .filter-section__list
+             .filter-section__row.filter-checkbox
+                 input(id="morning" type="checkbox" name="times-of-day" value="morning")
+                 label(for="morning") Утро
+             .filter-section__row.filter-checkbox
+                 input(id="day" type="checkbox" name="times-of-day" value="day")
+                 label(for="day") День
+             .filter-section__row.filter-checkbox
+                 input(id="evening" type="checkbox" name="times-of-day" value="evening")
+                 label(for="evening") Вечер
+             .filter-section__row.filter-checkbox
+                 input(id="night" type="checkbox" name="times-of-day" value="night")
+                 label(for="night") Ночь
+
+    // Секция | Время суток
+    fieldset.filter__section.filter-section.filter-section--movement
+         h4.filter-section__title Способ передвижения
+         .filter-section__list
+             .filter-section__row.filter-checkbox
+                 input(id="bus" type="checkbox" name="movement" value="bus")
+                 label(for="bus") Автобус
+             .filter-section__row.filter-checkbox
+                 input(id="car" type="checkbox" name="movement" value="car")
+                 label(for="car") Автомобиль
+             .filter-section__row.filter-checkbox
+                 input(id="walk" type="checkbox" name="movement" value="walk")
+                 label(for="walk") Прогулка
+             .filter-section__row.filter-checkbox
+                 input(id="water" type="checkbox" name="movement" value="water")
+                 label(for="water") По воде
+
+    // Секция | Категория
+    fieldset.filter__section.filter-section.filter-section--category
+         h4.filter-section__title Категория
+         .filter-section__list
+             .filter-section__row.filter-checkbox
+                 input(id="category01" type="checkbox" name="category" value="")
+                 label(for="category01") По дворам и парадным
+             .filter-section__row.filter-checkbox
+                 input(id="category02" type="checkbox" name="category" value="")
+                 label(for="category02") Ночные и вечерние
+             .filter-section__row.filter-checkbox
+                 input(id="category03" type="checkbox" name="category" value="")
+                 label(for="category03") Под развод мостов
+             .filter-section__row.filter-checkbox
+                 input(id="category05" type="checkbox" name="category" value="")
+                 label(for="category05") По пригородам
+             .filter-section__row.filter-checkbox
+                 input(id="category06" type="checkbox" name="category" value="")
+                 label(for="category06") Свидание на крыше
+             .filter-section__row.filter-checkbox
+                 input(id="category07" type="checkbox" name="category" value="")
+                 label(for="category07") Авторские
+
+
+    .filter__actions
+        button.filter__reset.button(type="reset") Сбросить
+        button.filter__apply.button Применить
+
+
+
+

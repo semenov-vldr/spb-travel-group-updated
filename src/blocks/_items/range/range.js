@@ -1,71 +1,53 @@
-let rangePrice = document.getElementById('range-price');
+const rangeSliderInit = ({ rangeSliderID, inputMinID, inputMaxID, step }) => {
+  const range = document.getElementById(rangeSliderID); // Ищем слайдер
+  const inputMin = document.getElementById(inputMinID); // Ищем input с меньшим значнием
+  const inputMax = document.getElementById(inputMaxID); // Ищем input с большим значнием
 
-if (rangePrice) {
+  if (!range || !inputMin || !inputMax) return // если этих элементов нет, прекращаем выполнение функции, чтобы не было ошибок
 
-  const minPrice = +rangePrice.dataset.min;
-  const maxPrice = +rangePrice.dataset.max;
+  const inputs = [inputMin, inputMax]; // создаем массив из меньшего и большего значения
 
-  const utilsRange = {
-    start: [minPrice, maxPrice],
-    connect: true,
-    range: {
-      'min': minPrice,
-      'max': maxPrice
+  const minValue= +inputMin.dataset.min;
+  const maxValue = +inputMax.dataset.max;
+
+  noUiSlider.create(range, { // инициализируем слайдер
+      start: [minValue, maxValue], // устанавливаем начальные значения
+      connect: true, // указываем что нужно показывать выбранный диапазон
+      range: { // устанавливаем минимальное и максимальное значения
+        'min': minValue,
+        'max': maxValue
+      },
+      step: step, // шаг изменения значений
     }
-  };
+  );
+
+  range.noUiSlider.on('update', function (values, handle) { // при изменений положения элементов управления слайдера изменяем соответствующие значения
+    inputs[handle].value = parseInt(values[handle]);
+  });
+
+  inputMin.addEventListener('change', function () { // при изменении меньшего значения в input - меняем положение соответствующего элемента управления
+    range.noUiSlider.set([this.value, null]);
+  });
+
+  inputMax.addEventListener('change', function () { // при изменении большего значения в input - меняем положение соответствующего элемента управления
+    range.noUiSlider.set([null, this.value]);
+  });
+};
 
 
-  noUiSlider.create(rangePrice, utilsRange);
-}
+const settingsRangePrice = {
+  rangeSliderID: "range-price",
+  inputMinID: "price-min",
+  inputMaxID: "price-max",
+  step: 100,
+};
 
+const settingsRangeDuration = {
+  rangeSliderID: "range-duration",
+  inputMinID: "duration-min",
+  inputMaxID: "duration-max",
+  step: 1,
+};
 
-
-
-
-// const filter = document.querySelector(".filter");
-// if (filter) {
-//
-//   const rangeInput = document.querySelectorAll(".range__items input"),
-//     priceInput = document.querySelectorAll(".range__fields input"),
-//     range = document.querySelector(".range__progress");
-//   let priceGap = 1000;
-//
-//   priceInput.forEach((input) => {
-//     input.addEventListener("input", (e) => {
-//       let minPrice = parseInt(priceInput[0].value),
-//         maxPrice = parseInt(priceInput[1].value);
-//
-//       if (maxPrice - minPrice >= priceGap && maxPrice <= rangeInput[1].max) {
-//         if (e.target.className === "input-min") {
-//           rangeInput[0].value = minPrice;
-//           range.style.left = (minPrice / rangeInput[0].max) * 100 + "%";
-//         } else {
-//           rangeInput[1].value = maxPrice;
-//           range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-//         }
-//       }
-//     });
-//   });
-//
-//   rangeInput.forEach((input) => {
-//     input.addEventListener("input", (e) => {
-//       let minVal = parseInt(rangeInput[0].value),
-//         maxVal = parseInt(rangeInput[1].value);
-//
-//       if (maxVal - minVal < priceGap) {
-//         if (e.target.className === "range-min") {
-//           rangeInput[0].value = maxVal - priceGap;
-//         } else {
-//           rangeInput[1].value = minVal + priceGap;
-//         }
-//       } else {
-//         priceInput[0].value = minVal;
-//         priceInput[1].value = maxVal;
-//         range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-//         range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-//       }
-//     });
-//   });
-//
-// }
-//
+window.addEventListener('DOMContentLoaded', () => rangeSliderInit(settingsRangePrice) );
+window.addEventListener('DOMContentLoaded', () => rangeSliderInit(settingsRangeDuration) );

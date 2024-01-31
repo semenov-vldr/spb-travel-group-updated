@@ -1,0 +1,11 @@
+// Хлебные крошки
+mixin breadcrumbsEvent(links)
+    .breadcrumbs(itemscope itemtype="https://schema.org/BreadcrumbList")
+        .breadcrumbs__container
+            a.breadcrumbs__item(href="/" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem") Главная
+            a.breadcrumbs__item(href="excursions.html" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem") Экскурсии
+            each link in links
+              if link.url
+                  a.breadcrumbs__item(href=link.url itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem")= link.text
+              else
+                  span.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem")= link.text

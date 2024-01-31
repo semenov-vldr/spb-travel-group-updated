@@ -1,0 +1,60 @@
+section.event
+    .event__container.container
+        +breadcrumbsEvent([{text: "Императорские и великокняжеские дворцы Санкт-Петербурга"}])
+        h1.event__title.event__title--desktop Императорские и великокняжеские дворцы Санкт-Петербурга
+        .event__header.event-header
+
+            // Slider
+            .event-header__slider.swiper
+                .swiper-wrapper
+                    .swiper-slide.event-header__slide
+                        img(src="https://static.tildacdn.com/tild6163-6230-4264-b134-353662363335/hu-chen-pwuzRFG4Dm4-.jpg")
+                    .swiper-slide.event-header__slide
+                        img(src="https://static.tildacdn.com/tild6466-6466-4362-b737-383331376265/DJI_0084-Edit.jpg")
+
+                .swiper-pagination
+                .swiper-button-next
+                .swiper-button-prev
+
+            h1.event__title.event__title--tablet Императорские и великокняжеские дворцы Санкт-Петербурга
+
+            // Info
+            .event-header__info
+                .event-header__info-wrapper
+                    strong.event-header__price От 1500 ₽ за человека
+                    .event-header__info-item.event-header__info-item--time Длительность:&ensp;
+                        //.event-header__duration
+                        strong 3 часа
+                        //.event-header__start
+                    .event-header__info-item Начало:&ensp;
+                        strong 13:00
+
+                    .event-header__info-item.event-header__info-item--days Расписание:&ensp;
+                        strong Вт, Чт, Сб
+                    .event-header__info-item.event-header__info-item--moving Перемещение:&ensp;
+                        strong Автобус, автомобиль
+                    .event-header__info-item.event-header__info-item--stop Остановки:&ensp;
+                            strong Михайловский замок, Шереметевский дворец, Стрелка Васильевского острова
+                    .event-header__info-item.event-header__info-item--format Формат:&ensp;
+                        strong Групповая, индивидуальная
+                    .event-header__info-item.event-header__info-item--privileges Льготный билет:&ensp;
+                        strong студенты, школьники, дети, пенсионеры, инвалиды
+
+                button.button.button--accent.event-header__button Забронировать
+
+
+        .event__main
+            .event__desc
+                h2.event__main-title Описание
+                p Петербург - город дворцов! Их количество, красота и роскошь, великолепный внешний облик поражает воображение. Обойти все великолепные дворцы Петербурга пешком будет крайне сложно, поэтому мы рекомендуем записаться на автобусную экскурсию по Санкт-Петербургу. Вы увидите императорские и великокняжеские дворцы и сможете посетить - дворец Великого Князя Владимира. С самого основания Петербурга здесь жила царская семья, богатые аристократические фамилии.Для них строились великолепные летние и зимние дворцы и резиденции. Летний и Зимний, Меншиковский дворец, дворец Белосельских-Белозерских, Аничков, Мраморный, Строгановский, Юсуповский, Михайловский, Мариинский, все они - настоящие архитектурные жемчужины города. Возведенные знаменитыми архитекторами в разное время, эти дворцы создают неповторимый образ города.
+
+            .event__route
+                h2.event__main-title Маршрут
+                p Отправление:
+                    strong Невский пр-т, 35, Гостиный Двор
+
+                //video.event__route-video(controls muted playsinline)
+                    //source(src="./files/trip.mp4" type='video/webm')
+                    //source(src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type='video/webm')
+
+                <iframe class="event__route-video" width="100%" height="auto" src="https://www.youtube.com/embed/YYUhtNe8sBg?si=zPk8IbAcCrR603Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

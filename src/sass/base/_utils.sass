@@ -36,22 +36,17 @@
   min-height: 40px
   border: 1px solid transparent
   &.button--accent
-    //background-color: $accent
-    color: white
-    &:hover
-      //background-color: $accent-hover
-      transition: 0.3s
-
+    background-color: $accent
 
 button
   cursor: pointer
 
 .desktop-hidden
-  @media (min-width: $width-mobile)
+  @media (min-width: $width-tablet)
     display: none
 
 .mobile-hidden
-  @media (max-width: $width-mobile)
+  @media (max-width: $width-tablet)
     display: none
 
 .tablet-hidden
@@ -72,39 +67,46 @@ button
   position: relative
   z-index: 4
   margin-top: 16px
-  @media (min-width: $width-tablet)
-    display: none
 
 
 .swiper-pagination-bullet
   width: 12px
   height: 12px
-  background-color: #C6C6C6
+  background-color: $grey
   transition: $transition
-  //&-active
-//background-color: $grey
+  &-active
+    width: 24px
+    background-color: $accent
+    border-radius: 24px
+  @media (max-width: $width-mobile)
+    width: 6px
+    height: 6px
+    &-active
+      width: 12px
 
 // стрелки навигации
-//.swiper-button-next,
-//.swiper-button-prev
-//  width: 32px
-//  height: 32px
-//  cursor: pointer
-//  z-index: 1
-//  background-repeat: no-repeat
-//  background-size: cover
-//  background-position: center
-//  top: -50px
-//  right: 0
-//  left: initial
-//  margin-top: 0
-//  &::after
-//    display: none
-//  @media (max-width: $width-mobile)
-//    display: none
-//.swiper-button-prev
-//  background-image: url('../img/icons/arrow-right.svg')
-//  transform: rotate(180deg) translateX(100%)
-//  right: 20px
-//.swiper-button-next
-//  background-image: url('../img/icons/arrow-right.svg')
+.swiper-button-next,
+.swiper-button-prev
+  width: 40px
+  height: 40px
+  cursor: pointer
+  z-index: 1
+  background-repeat: no-repeat
+  background-size: 24px
+  background-position: center
+  background-color: rgba($white, 0.6)
+  border-radius: 50%
+  transition: $transition
+  &:hover
+    background-color: $white
+  &::after
+    display: none
+  @media (max-width: $width-mobile)
+    display: none
+.swiper-button-prev
+  left: 8px
+  background-image: url('../img/icons/arrow-left.svg')
+.swiper-button-next
+  right: 8px
+  transform: rotate(180deg)
+  background-image: url('../img/icons/arrow-left.svg')

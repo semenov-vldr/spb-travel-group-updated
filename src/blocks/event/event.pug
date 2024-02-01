@@ -50,11 +50,15 @@ section.event
 
             .event__route
                 h2.event__main-title Маршрут
-                p Отправление:
+                p Отправление:&ensp;
                     strong Невский пр-т, 35, Гостиный Двор
 
-                //video.event__route-video(controls muted playsinline)
-                    //source(src="./files/trip.mp4" type='video/webm')
+
+
+                include 1.pug
+
+                //video.event__route-video(controls muted playsinline preload="auto")
+                //    source(src="./files/trip.mp4" type='video/webm')
                     //source(src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type='video/webm')
 
-                <iframe class="event__route-video" width="100%" height="auto" src="https://www.youtube.com/embed/YYUhtNe8sBg?si=zPk8IbAcCrR603Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                //<iframe class="event__route-video" width="100%" height="auto" src="https://www.youtube.com/embed/YYUhtNe8sBg?si=zPk8IbAcCrR603Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

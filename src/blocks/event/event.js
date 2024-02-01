@@ -30,3 +30,5 @@ new Swiper('.event-header__slider', {
   loop: true,
 
 });
+
+

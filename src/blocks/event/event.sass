@@ -17,18 +17,20 @@
     display: grid
     grid-template-columns: 62% 1fr
     grid-gap: 32px
-    @media (max-width: $width-tablet)
+    @media (max-width: 1200px)
       gap: 16px
       display: flex
       flex-direction: column
 
     &__slider
       position: relative
-      height: 530px
-      @media (max-width: $width-tablet)
-        height: auto
+      height: 100%
+      max-height: 530px
+      width: 100%
+      @media (max-width: 1200px)
         aspect-ratio: 3 / 2
-        margin-bottom: 16px
+      @media (max-width: $width-mobile)
+        aspect-ratio: initial
       .swiper-slide
         overflow: hidden
         border-radius: 24px
@@ -46,9 +48,9 @@
     &__info
       @include fontSize(16, 20)
       @media (min-width: $width-tablet)
-      background-color: $white
-      padding: 32px
-      border-radius: 32px
+        background-color: $white
+        padding: 32px
+        border-radius: 32px
 
     &__info-wrapper
       display: flex
@@ -82,9 +84,23 @@
     margin-top: 16px
     aspect-ratio: 3.6 / 2 !important
     width: 100%
+    height: auto
 
   video
     width: 100%
-    height: auto !important
+    @media (min-width: $width-tablet)
+      //height: auto !important
+
+
+  &__memo
+    &-list
+      display: flex
+      flex-direction: column
+      gap: 12px
+      padding-left: 24px
+      @media (max-width: $width-mobile)
+        gap: 8px
+      li
+        list-style-type: disc
 
 

@@ -37,6 +37,9 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
       padding: 0 50px
     a
       white-space: nowrap
+      transition: $transition
+      &:hover
+        color: $hover
     @media (max-width: $width-mobile)
       justify-content: initial
       gap: 24px
